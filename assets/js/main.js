@@ -42,6 +42,9 @@ document.addEventListener('alpine:init', () => {
     modalOpen: false,
     selectedProject: null,
 
+    // Recruiter Mode & HR Quick Brief Modal
+    recruiterModalOpen: false,
+
     // Image Lightbox Viewer
     lightboxOpen: false,
     lightboxImage: '',
@@ -76,11 +79,12 @@ document.addEventListener('alpine:init', () => {
       // Keyboard modal closer
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          if (this.lightboxOpen) this.closeLightbox();
+          if (this.recruiterModalOpen) this.closeRecruiterModal();
+          else if (this.lightboxOpen) this.closeLightbox();
           else if (this.modalOpen) this.closeProjectModal();
-        } else if (e.key === 'ArrowRight' && !this.modalOpen && !this.lightboxOpen && this.viewMode === 'slider') {
+        } else if (e.key === 'ArrowRight' && !this.modalOpen && !this.lightboxOpen && !this.recruiterModalOpen && this.viewMode === 'slider') {
           this.nextSlide();
-        } else if (e.key === 'ArrowLeft' && !this.modalOpen && !this.lightboxOpen && this.viewMode === 'slider') {
+        } else if (e.key === 'ArrowLeft' && !this.modalOpen && !this.lightboxOpen && !this.recruiterModalOpen && this.viewMode === 'slider') {
           this.prevSlide();
         }
       });
@@ -256,6 +260,19 @@ document.addEventListener('alpine:init', () => {
       setTimeout(() => {
         this.selectedProject = null;
       }, 250);
+    },
+
+    // Recruiter Modal Handlers
+    openRecruiterModal() {
+      this.recruiterModalOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    closeRecruiterModal() {
+      this.recruiterModalOpen = false;
+      if (!this.modalOpen && !this.lightboxOpen) {
+        document.body.style.overflow = '';
+      }
     },
 
     // Lightbox Modal Handlers
