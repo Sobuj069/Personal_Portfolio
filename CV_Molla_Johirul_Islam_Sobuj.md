@@ -69,12 +69,20 @@ Distinguished by specialized capabilities in **E-commerce Analytics & Tracking**
   - Configured full **Google Tag Manager (GTM)** setup and custom **DataLayer** integration for complete e-commerce funnel tracking (Product Views, Add to Cart, Cart Abandonment, Checkout, Purchases).
   - Integrated smooth Cash-On-Delivery checkout, dynamic coupon discounts, and order management admin workflow.
 
-### 3. **Krishi Express** — Smart Agriculture & Farm Supply SaaS
-- **Live URL:** [https://krishiexpress.smcloudit.top/](https://krishiexpress.smcloudit.top/)
-- **Tech Stack:** Laravel, MySQL, RESTful APIs, Cloud Infrastructure
+### 3. **Kacchi Dine** — Restaurant POS & Table Management SaaS
+- **Live URL:** [https://resturentpos.smcloudit.top/](https://resturentpos.smcloudit.top/)
+- **Tech Stack:** Laravel, PHP 8.x, MySQL, Cloud SaaS, POS Billing, KOT Printing, JavaScript
 - **Key Achievements:**
-  - Engineered an agri-business platform on the SM Cloud IT stack enabling farmers and suppliers to manage logistics and inventory.
-  - Built custom modules for supply-chain distribution, stock valuation, and direct customer dispatch.
+  - Architected restaurant POS system with real-time table floor plans (dine-in/takeaway) and dining timer monitoring.
+  - Built high-speed touch/keyboard checkout terminal with automated Kitchen Order Ticket (KOT) printing and 80mm thermal receipt generation.
+  - Engineered ingredient & raw material depletion tracking linked directly to recipe orders and live daily VAT/sales reporting.
+
+### 4. **SM Shop** — Fashion & Apparel E-Commerce Platform
+- **Live URL:** [https://e-commerce.smcloudit.top/](https://e-commerce.smcloudit.top/)
+- **Tech Stack:** Laravel, PHP 8.x, MySQL, Google Tag Manager (GTM), DataLayer, Tailwind CSS, REST APIs
+- **Key Achievements:**
+  - Developed full-stack apparel e-commerce website with real-time stock sync, multi-attribute variations (sizes/colors), and responsive cart drawer.
+  - Integrated digital payment gateways (bKash, Nagad, SSLCommerz, COD) and complete custom DataLayer events for GTM and GA4.
 
 ### 4. **Fast IT — Corporate IT Solutions Platform**
 - **Live URL:** [https://fastit.com.bd/](https://fastit.com.bd/)

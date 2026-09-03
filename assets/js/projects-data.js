@@ -33,13 +33,69 @@ const projectsData = [
     ]
   },
   {
+    id: "restaurant-pos",
+    title: "Kacchi Dine — Restaurant POS & Table Management",
+    subtitle: "Cloud-Based Restaurant POS, Kitchen Order Ticket (KOT) & Billing System",
+    category: "saas",
+    badge: "Restaurant POS SaaS",
+    badgeColor: "amber",
+    icon: "fa-solid fa-utensils",
+    image: "assets/img/projects/restaurant-pos.jpg",
+    domain: "resturentpos.smcloudit.top",
+    liveUrl: "https://resturentpos.smcloudit.top/",
+    githubUrl: null,
+    summary: "Real-time restaurant point-of-sale, interactive table floor management, Kitchen Order Ticket (KOT) printing, menu categorization, and revenue analytics.",
+    description: "Kacchi Dine Restaurant POS is a dedicated enterprise management software designed for restaurants, cafes, and multi-branch food chains. Engineered with Laravel, MySQL, and modern JavaScript, it features an interactive table layout/floor plan (dine-in vs. takeaway), fast touch/keyboard billing, split billing, Kitchen Order Ticket (KOT) auto-routing, thermal receipt printing (80mm/58mm), real-time ingredient & inventory depletion, and daily sales/VAT reporting.",
+    tags: ["Laravel", "PHP 8.x", "MySQL", "Cloud SaaS", "POS Billing", "KOT Printing", "Table Management", "Inventory Control"],
+    stats: [
+      { label: "Table Layout", value: "Interactive Grid" },
+      { label: "Billing Terminal", value: "Touch / KOT" },
+      { label: "Receipt Format", value: "Thermal 80mm" },
+      { label: "Sales Analytics", value: "Real-Time VAT" }
+    ],
+    highlights: [
+      "Interactive table floor plan showing occupied vs. available tables with live dining timer tracking.",
+      "Multi-category fast order checkout with automated Kitchen Order Ticket (KOT) dispatch to kitchen stations.",
+      "Thermal receipt printing with custom VAT, service charges, discounts, and split billing methods.",
+      "Inventory depletion system deducting recipe raw materials automatically per food order."
+    ]
+  },
+  {
+    id: "sm-ecommerce",
+    title: "SM Shop — Fashion & Apparel E-Commerce",
+    subtitle: "Full-Stack Laravel E-Commerce with Multi-Payment & GTM DataLayer",
+    category: "ecommerce",
+    badge: "Live E-Commerce",
+    badgeColor: "rose",
+    icon: "fa-solid fa-bag-shopping",
+    image: "assets/img/projects/sm-ecommerce.jpg",
+    domain: "e-commerce.smcloudit.top",
+    liveUrl: "https://e-commerce.smcloudit.top/",
+    githubUrl: null,
+    summary: "High-performance lifestyle & apparel e-commerce store with real-time stock sync, dynamic filters, bKash/Nagad/COD checkout, and full-funnel GTM/GA4 conversion tracking.",
+    description: "SM Shop is a production-grade e-commerce application developed on Laravel, PHP 8.x, and MySQL. It offers a rich catalog of modern apparel, real-time product variations (sizes/colors), dynamic price filtering, responsive shopping cart drawer, guest/authenticated checkout, multi-gateway integration (bKash, Nagad, SSLCommerz, Cash on Delivery), and complete custom DataLayer events for Google Tag Manager and Meta Pixel CAPI.",
+    tags: ["Laravel", "PHP 8.x", "MySQL", "Google Tag Manager", "DataLayer", "Payment Gateways", "Tailwind CSS", "REST APIs"],
+    stats: [
+      { label: "Catalog Filter", value: "Multi-Attribute" },
+      { label: "Payment APIs", value: "bKash / COD" },
+      { label: "DataLayer", value: "100% Funnel" },
+      { label: "Page Load", value: "< 1.1s" }
+    ],
+    highlights: [
+      "Custom DataLayer implementation tracking standard events: view_item, add_to_cart, begin_checkout, and purchase.",
+      "Integrated digital payment gateways (bKash, Nagad, SSLCommerz) alongside automated Cash on Delivery order verification.",
+      "Dynamic multi-attribute catalog filtering (size, color, price slider, and category hierarchy).",
+      "Automated order invoice generation, customer SMS/email notifications, and responsive mobile-first UI."
+    ]
+  },
+  {
     id: "lapreepies",
     title: "La Preepies",
     subtitle: "Luxury Fashion & Beauty E-Commerce Store with Full Funnel Analytics",
     category: "ecommerce",
     badge: "E-Commerce + GTM",
-    badgeColor: "rose",
-    icon: "fa-solid fa-bag-shopping",
+    badgeColor: "purple",
+    icon: "fa-solid fa-gem",
     image: "assets/img/projects/lapreepies.png",
     domain: "lapreepies.com",
     liveUrl: "https://lapreepies.com/",
@@ -58,6 +114,33 @@ const projectsData = [
       "Client-side & server-side GTM configurations for GA4 and Meta Pixel conversion measurement without ad-blocker loss.",
       "Dynamic catalog filters for price ranges, brand affiliations, variant attributes (colors/sizes), and in-stock statuses.",
       "Frictionless single-page and multi-step checkout workflow with automatic shipping rate calculators."
+    ]
+  },
+  {
+    id: "dadabhaai",
+    title: "DadaBhaai Multi-Vendor Platform",
+    subtitle: "Multi-Merchant E-Commerce & Business Directory",
+    category: "ecommerce",
+    badge: "Marketplace SaaS",
+    badgeColor: "sky",
+    icon: "fa-solid fa-store",
+    image: "assets/img/projects/dadabhaai.jpg",
+    domain: "dadabhaai.com",
+    liveUrl: "https://dadabhaai.com/",
+    githubUrl: null,
+    summary: "Scalable multi-vendor e-commerce platform allowing individual merchant storefronts, product listings, and split order management.",
+    description: "DadaBhaai is a multi-vendor marketplace engine designed with Laravel, MySQL, Tailwind CSS, and JavaScript. It enables independent merchants to set up their digital storefronts, upload inventory, manage stock, and track fulfilled sales while the central platform handles transactions, commissions, and customer support.",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "JavaScript", "RBAC", "Multi-Vendor", "Order Splitting"],
+    stats: [
+      { label: "Vendor Support", value: "Unlimited Stores" },
+      { label: "RBAC Tiers", value: "Admin/Vendor/User" },
+      { label: "UI Library", value: "Tailwind CSS" },
+      { label: "Order Logic", value: "Auto-Split" }
+    ],
+    highlights: [
+      "Comprehensive multi-level authentication and role management (Admin, Vendor, Customer).",
+      "Vendor dashboard with individual sales charts, inventory upload wizards, and withdrawal request systems.",
+      "Automated commission deduction logic and aggregated multi-store shopping cart experience."
     ]
   },
   {
@@ -93,7 +176,7 @@ const projectsData = [
     subtitle: "Digital Technology & Software Services Platform",
     category: "corporate",
     badge: "Live Production",
-    badgeColor: "sky",
+    badgeColor: "blue",
     icon: "fa-solid fa-microchip",
     image: "assets/img/projects/fast-tech.png",
     domain: "fasttech.com.bd",
@@ -132,64 +215,13 @@ const projectsData = [
     stats: [
       { label: "Role", value: "Full Stack Dev" },
       { label: "Performance", value: "Optimized Caching" },
-      { label: "SEO Indexing", value: "Schema.org & Meta" }
+      { label: "SEO Indexing", value: "Schema.org & Meta" },
+      { label: "Architecture", value: "Modular MVC" }
     ],
     highlights: [
       "High-converting lead generation forms with automated CRM routing and anti-spam verification.",
       "Modular dynamic admin control over service offerings, customer testimonials, and career job openings.",
       "Responsive, cross-browser compatible interface engineered for lightning-fast international client access."
-    ]
-  },
-  {
-    id: "krishi-express",
-    title: "Krishi Express",
-    subtitle: "Smart Agriculture Supply-Chain & Cloud Hub",
-    category: "agri",
-    badge: "AgriTech Cloud",
-    badgeColor: "amber",
-    icon: "fa-solid fa-seedling",
-    image: "assets/img/projects/krishi-express.png",
-    domain: "krishiexpress.smcloudit.top",
-    liveUrl: "https://krishiexpress.smcloudit.top/",
-    githubUrl: null,
-    summary: "Cloud-powered agricultural supply logistics and farm product management platform built upon SM Cloud IT infrastructure.",
-    description: "Krishi Express is a specialized cloud solution engineered to connect rural agricultural producers with wholesale suppliers and retail outlets. Built on the SM Cloud IT stack using Laravel and MySQL, it optimizes logistics dispatch schedules, farm harvest cataloging, perishable stock monitoring, and direct B2B invoicing.",
-    tags: ["Laravel", "PHP", "MySQL", "RESTful APIs", "Cloud Infrastructure", "Supply Chain", "Bootstrap"],
-    stats: [
-      { label: "Infrastructure", value: "SM Cloud IT" },
-      { label: "Target Sector", value: "Agri-Business" },
-      { label: "Module", value: "B2B Logistics" }
-    ],
-    highlights: [
-      "Tailored agricultural inventory database supporting bulk produce metrics (Kg, Ton, Bag).",
-      "Supplier ledger accounting, automated harvest invoice generation, and courier tracking.",
-      "High scalability and seamless shared-resource integration with the SM Cloud ecosystem."
-    ]
-  },
-  {
-    id: "dadabhaai",
-    title: "DadaBhaai Multi-Vendor Platform",
-    subtitle: "Multi-Merchant E-Commerce & Business Directory",
-    category: "ecommerce",
-    badge: "Multi-Vendor Marketplace",
-    badgeColor: "purple",
-    icon: "fa-solid fa-store",
-    image: "assets/img/projects/dadabhaai.png",
-    domain: "dadabhaai.com",
-    liveUrl: "https://dadabhaai.com/",
-    githubUrl: null,
-    summary: "Scalable multi-vendor e-commerce platform allowing individual merchant storefronts, product listings, and split order management.",
-    description: "DadaBhaai is a multi-vendor marketplace engine designed with Laravel, MySQL, Tailwind CSS, and JavaScript. It enables independent merchants to set up their digital storefronts, upload inventory, manage stock, and track fulfilled sales while the central platform handles transactions, commissions, and customer support.",
-    tags: ["Laravel", "MySQL", "Tailwind CSS", "JavaScript", "RBAC", "Multi-Vendor", "Order Splitting"],
-    stats: [
-      { label: "Vendor Support", value: "Unlimited Stores" },
-      { label: "RBAC Tiers", value: "Admin/Vendor/User" },
-      { label: "UI Library", value: "Tailwind CSS" }
-    ],
-    highlights: [
-      "Comprehensive multi-level authentication and role management (Admin, Vendor, Customer).",
-      "Vendor dashboard with individual sales charts, inventory upload wizards, and withdrawal request systems.",
-      "Automated commission deduction logic and aggregated multi-store shopping cart experience."
     ]
   },
   {
@@ -210,7 +242,8 @@ const projectsData = [
     stats: [
       { label: "CMS Engine", value: "Dynamic Admin" },
       { label: "Lead Pipeline", value: "Status Tracked" },
-      { label: "SEO Score", value: "95+ Lighthouse" }
+      { label: "SEO Score", value: "95+ Lighthouse" },
+      { label: "Security", value: "CSRF / Sanitized" }
     ],
     highlights: [
       "Custom administrative panel for rapid content, case study, and blog publication without code modification.",
@@ -240,11 +273,11 @@ const skillsData = {
   ],
   frontend: [
     { name: "Tailwind CSS", level: 94, exp: "3+ Years", highlight: "Modern utility-first responsive UI, Dark Mode, Custom Themes" },
-    { name: "JavaScript (ES6+)", level: 88, exp: "3+ Years", highlight: "Async/Await, DOM, Fetch/Axios, Modules, Event Loop" },
+    { name: "JavaScript (ES6+) & Motion", level: 90, exp: "3+ Years", highlight: "Async/Await, DOM, Motion JS spring animations, Modules, Event Loop" },
     { name: "Bootstrap (4/5)", level: 95, exp: "4+ Years", highlight: "Grid System, Components, Custom SASS variables, Admin Themes" },
     { name: "jQuery / AJAX", level: 92, exp: "4+ Years", highlight: "Dynamic asynchronous data fetching, DOM animation, Event handling" },
     { name: "HTML5 & CSS3 / SASS", level: 95, exp: "4+ Years", highlight: "Semantic tags, CSS Flexbox/Grid, Keyframe animations" },
-    { name: "Blade & Alpine.js", level: 90, exp: "2+ Years", highlight: "Reusable Blade components, Reactive micro-frontends, transitions" }
+    { name: "Blade & Alpine.js", level: 92, exp: "2+ Years", highlight: "Reusable Blade components, Reactive micro-frontends, transitions" }
   ],
   ai_automation: [
     { name: "AI-Assisted Development", level: 95, exp: "Daily Driver", highlight: "High-velocity coding, test generation, refactoring, architecture review" },

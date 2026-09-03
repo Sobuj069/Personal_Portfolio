@@ -1,5 +1,5 @@
 /**
- * Alpine.js Portfolio Controller & Reactive State
+ * Alpine.js & Motion Portfolio Controller & Reactive State
  * Molla Johirul Islam Sobuj - Full-Stack Laravel Developer
  */
 
@@ -30,7 +30,7 @@ document.addEventListener('alpine:init', () => {
     // Interactive Tracking Flow Simulator
     isSimulating: false,
     simStep: 0,
-    simLog: 'Click "Fire Sample Purchase Event" to trace real-time DataLayer & Server-Side execution.',
+    simLog: 'Click "Test Live Flow" to trace real-time DataLayer & Server-Side execution.',
 
     // Projects Filtering, Slider & Modal
     projects: projectsData || [],
@@ -41,6 +41,13 @@ document.addEventListener('alpine:init', () => {
     autoplayTimer: null,
     modalOpen: false,
     selectedProject: null,
+
+    // Image Lightbox Viewer
+    lightboxOpen: false,
+    lightboxImage: '',
+    lightboxTitle: '',
+    lightboxDomain: '',
+    lightboxLiveUrl: '',
 
     // Skills Matrix Tabs
     skills: skillsData || {},
@@ -63,16 +70,94 @@ document.addEventListener('alpine:init', () => {
       // Start slider autoplay
       this.startSliderAutoplay();
 
+      // Setup Scroll Progress & Motion Observers
+      this.setupMotionEffects();
+
       // Keyboard modal closer
       window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && this.modalOpen) {
-          this.closeProjectModal();
-        } else if (e.key === 'ArrowRight' && !this.modalOpen && this.viewMode === 'slider') {
+        if (e.key === 'Escape') {
+          if (this.lightboxOpen) this.closeLightbox();
+          else if (this.modalOpen) this.closeProjectModal();
+        } else if (e.key === 'ArrowRight' && !this.modalOpen && !this.lightboxOpen && this.viewMode === 'slider') {
           this.nextSlide();
-        } else if (e.key === 'ArrowLeft' && !this.modalOpen && this.viewMode === 'slider') {
+        } else if (e.key === 'ArrowLeft' && !this.modalOpen && !this.lightboxOpen && this.viewMode === 'slider') {
           this.prevSlide();
         }
       });
+    },
+
+    // Motion & Scroll Observers
+    setupMotionEffects() {
+      // 1. Scroll Progress Bar
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        if (progressBar) {
+          progressBar.style.transform = `scaleX(${progress})`;
+        }
+      }, { passive: true });
+
+      // 2. Intersection Observer for Scroll Reveals
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            // Animate counters if present
+            const counters = entry.target.querySelectorAll('.counter-val');
+            counters.forEach(c => this.animateCounter(c));
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('[data-motion]').forEach(el => revealObserver.observe(el));
+
+      // 3. Subtle 3D Card Tilt on Hover
+      this.$nextTick(() => {
+        this.initCardTilt();
+      });
+    },
+
+    initCardTilt() {
+      document.querySelectorAll('.interactive-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const rotateX = (-y / rect.height) * 6;
+          const rotateY = (x / rect.width) * 6;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    },
+
+    animateCounter(el) {
+      if (el.dataset.animated) return;
+      el.dataset.animated = "true";
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = 0;
+      const startTime = performance.now();
+
+      const update = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quad
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (target - start) * ease);
+        el.textContent = `${current}${suffix}`;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = `${target}${suffix}`;
+        }
+      };
+      requestAnimationFrame(update);
     },
 
     // Theme Switcher
@@ -122,13 +207,16 @@ document.addEventListener('alpine:init', () => {
     setCategory(category) {
       this.activeCategory = category;
       this.currentSlide = 0;
+      this.$nextTick(() => {
+        this.initCardTilt();
+      });
     },
 
     // Slider Controls
     startSliderAutoplay() {
       if (this.autoplayTimer) clearInterval(this.autoplayTimer);
       this.autoplayTimer = setInterval(() => {
-        if (!this.isPaused && this.viewMode === 'slider' && !this.modalOpen) {
+        if (!this.isPaused && this.viewMode === 'slider' && !this.modalOpen && !this.lightboxOpen) {
           this.nextSlide();
         }
       }, 4500);
@@ -170,6 +258,23 @@ document.addEventListener('alpine:init', () => {
       }, 250);
     },
 
+    // Lightbox Modal Handlers
+    openLightbox(project) {
+      this.lightboxImage = project.image;
+      this.lightboxTitle = project.title;
+      this.lightboxDomain = project.domain;
+      this.lightboxLiveUrl = project.liveUrl;
+      this.lightboxOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+
+    closeLightbox() {
+      this.lightboxOpen = false;
+      if (!this.modalOpen) {
+        document.body.style.overflow = '';
+      }
+    },
+
     // Terminal Code Runner Simulator
     runCode() {
       if (this.isRunningCode) return;
@@ -178,7 +283,7 @@ document.addEventListener('alpine:init', () => {
 
       setTimeout(() => {
         if (this.activeCodeTab === 'php') {
-          this.codeOutput = `[OK] PHP 8.2 & Laravel 11 Kernel Booted.\n[OK] Eloquent Models & DB Schema Indexed.\n[OK] 8+ Production Systems Active (Fast IT, MediFlow, etc.).`;
+          this.codeOutput = `[OK] PHP 8.2 & Laravel 11 Kernel Booted.\n[OK] Eloquent Models & DB Schema Indexed.\n[OK] 9+ Production Systems Active (Fast IT, MediFlow, Kacchi Dine, SM Shop, etc.).`;
         } else if (this.activeCodeTab === 'gtm') {
           this.codeOutput = `[OK] DataLayer Initialized: event='purchase'\n[OK] GTM Client Handshake: Container GTM-5X9K2\n[OK] Server-Side sGTM & Meta CAPI Event Verified.`;
         } else {
@@ -245,3 +350,4 @@ document.addEventListener('alpine:init', () => {
     }
   }));
 });
+

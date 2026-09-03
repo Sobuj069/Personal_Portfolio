@@ -1,12 +1,13 @@
 /* ==========================================================================
    Molla Johirul Islam Sobuj - Portfolio Custom Stylesheet
-   Alpine.js Animated UI & High-Contrast System
+   Motion JS & Alpine.js Animated UI & High-Contrast System
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-main: 'Google Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Primary Theme Variables (Dark Mode Default) */
@@ -33,6 +34,20 @@
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   --code-bg: #060911;
   --code-border: #1e293b;
+}
+
+/* Scroll Progress Bar at Top */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #a855f7);
+  transform-origin: 0%;
+  z-index: 9999;
+  transform: scaleX(0);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
 }
 
 /* Light Theme Variables */
@@ -453,10 +468,112 @@ body {
   height: 8px;
   border-radius: 9999px;
   background: var(--border-color);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 .slider-dot.active {
-  width: 28px;
-  background: var(--primary);
+  width: 32px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
+
+/* Enhanced Project Image Box & Reflection */
+.project-preview-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0b1120;
+}
+
+.project-preview-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.project-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  will-change: transform;
+}
+
+.interactive-card:hover .project-preview-img {
+  transform: scale(1.05);
+}
+
+/* Lightbox Full-Screen Image Preview Modal */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 17, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Motion Reveal Attributes */
+[data-motion] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-motion].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Magnetic Button Hover Effect */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.magnetic-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Stagger List Fade In */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.stagger-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
