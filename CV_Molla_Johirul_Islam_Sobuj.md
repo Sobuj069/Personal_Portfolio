@@ -52,7 +52,15 @@ Distinguished by specialized capabilities in **E-commerce Analytics & Tracking**
 
 ## FEATURED PRODUCTION PROJECTS
 
-### 1. **MediFlow POS (SM Cloud IT)** — Cloud Pharmacy Management SaaS
+### 1. **Camera BD** — Premier Pro Camera & Broadcast Solutions, Bangladesh
+- **Live URL:** [https://camerabd.com.bd/](https://camerabd.com.bd/)
+- **Tech Stack:** Laravel 10, Livewire 3, PHP 8.x, MySQL, Intervention Image, Barcode Tracking, ADN SMS, Tailwind CSS
+- **Key Achievements:**
+  - Engineered Bangladesh's premier pro camera and broadcast solutions e-commerce platform built with Laravel 10 and Livewire 3.
+  - Implemented dynamic equipment catalog with multi-variant filtering, barcode inventory tracking, automated ADN SMS gateway notifications, and fast responsive checkout.
+  - Designed optimized MySQL database architecture, automated PDF invoicing, and secure administrative role-based access.
+
+### 2. **MediFlow POS (SM Cloud IT)** — Cloud Pharmacy Management SaaS
 - **Live URL:** [https://smcloudit.top/](https://smcloudit.top/)
 - **Tech Stack:** Laravel, MySQL, RESTful APIs, Cloud SaaS Architecture, JavaScript, Bootstrap
 - **Key Achievements:**
@@ -61,7 +69,7 @@ Distinguished by specialized capabilities in **E-commerce Analytics & Tracking**
   - Implemented automated batch & expiry tracking with proactive 30/60/90-day alert triggers.
   - Built real-time financial reporting dashboards for daily profit/loss, expense tracking, and sales analytics.
 
-### 2. **La Preepies** — Luxury Fashion & Beauty E-Commerce Ecosystem
+### 3. **La Preepies** — Luxury Fashion & Beauty E-Commerce Ecosystem
 - **Live URL:** [https://lapreepies.com/](https://lapreepies.com/)
 - **Tech Stack:** Laravel, MySQL, RESTful APIs, Google Tag Manager (GTM), DataLayer, JavaScript, Tailwind CSS
 - **Key Achievements:**
@@ -69,7 +77,7 @@ Distinguished by specialized capabilities in **E-commerce Analytics & Tracking**
   - Configured full **Google Tag Manager (GTM)** setup and custom **DataLayer** integration for complete e-commerce funnel tracking (Product Views, Add to Cart, Cart Abandonment, Checkout, Purchases).
   - Integrated smooth Cash-On-Delivery checkout, dynamic coupon discounts, and order management admin workflow.
 
-### 3. **Kacchi Dine** — Restaurant POS & Table Management SaaS
+### 4. **Kacchi Dine** — Restaurant POS & Table Management SaaS
 - **Live URL:** [https://resturentpos.smcloudit.top/](https://resturentpos.smcloudit.top/)
 - **Tech Stack:** Laravel, PHP 8.x, MySQL, Cloud SaaS, POS Billing, KOT Printing, JavaScript
 - **Key Achievements:**
@@ -77,42 +85,42 @@ Distinguished by specialized capabilities in **E-commerce Analytics & Tracking**
   - Built high-speed touch/keyboard checkout terminal with automated Kitchen Order Ticket (KOT) printing and 80mm thermal receipt generation.
   - Engineered ingredient & raw material depletion tracking linked directly to recipe orders and live daily VAT/sales reporting.
 
-### 4. **SM Shop** — Fashion & Apparel E-Commerce Platform
+### 5. **SM Shop** — Fashion & Apparel E-Commerce Platform
 - **Live URL:** [https://e-commerce.smcloudit.top/](https://e-commerce.smcloudit.top/)
 - **Tech Stack:** Laravel, PHP 8.x, MySQL, Google Tag Manager (GTM), DataLayer, Tailwind CSS, REST APIs
 - **Key Achievements:**
   - Developed full-stack apparel e-commerce website with real-time stock sync, multi-attribute variations (sizes/colors), and responsive cart drawer.
   - Integrated digital payment gateways (bKash, Nagad, SSLCommerz, COD) and complete custom DataLayer events for GTM and GA4.
 
-### 4. **Fast IT — Corporate IT Solutions Platform**
+### 6. **Fast IT — Corporate IT Solutions Platform**
 - **Live URL:** [https://fastit.com.bd/](https://fastit.com.bd/)
 - **Tech Stack:** Laravel, PHP 8.x, MySQL, Bootstrap 5, JavaScript, REST APIs
 - **Key Achievements:**
   - Developed and maintain official corporate web platform for Fast IT managing client consultation bookings and quote intake.
   - Engineered clean REST APIs, optimized MySQL caching, and built dynamic service management modules.
 
-### 5. **Fast Tech — Technology Innovations & Services Portal**
+### 7. **Fast Tech — Technology Innovations & Services Portal**
 - **Live URL:** [https://fasttech.com.bd/](https://fasttech.com.bd/)
 - **Tech Stack:** Laravel, PHP 8.x, MySQL, Bootstrap 5, JavaScript, SEO Optimization
 - **Key Achievements:**
   - Developed dedicated digital platform for Fast Tech showcasing enterprise software innovations and IT services.
   - Built interactive quote generation tools, automated lead routing, and search engine metadata controls.
 
-### 6. **Ngen IT — Corporate Portal & Lead Management**
+### 8. **Ngen IT — Corporate Portal & Lead Management**
 - **Live URL:** [https://www.ngenitltd.com/](https://www.ngenitltd.com/)
 - **Tech Stack:** Laravel, MySQL, Bootstrap, JavaScript, SEO Optimization
 - **Key Achievements:**
   - Developed official corporate web presence showcasing global software solutions, client portfolios, and enterprise capabilities.
   - Built lead capture engine with automated email notifications, CRM integration, and high-performance server caching.
 
-### 7. **TechFocus LTD — Corporate Website & Lead Portal**
+### 9. **TechFocus LTD — Corporate Website & Lead Portal**
 - **Live URL:** [https://www.techfocusltd.com/](https://www.techfocusltd.com/)
 - **Tech Stack:** Laravel, MySQL, Bootstrap, JavaScript, jQuery
 - **Key Achievements:**
   - Built dynamic corporate portal with complete administrative control over service offerings, portfolio items, and blog articles.
   - Developed client inquiry tracking system with status pipelines and SEO meta management.
 
-### 8. **DadaBhaai — Multi-Vendor E-Commerce & Business Directory**
+### 10. **DadaBhaai — Multi-Vendor E-Commerce & Business Directory**
 - **Live URL:** [https://dadabhaai.com/](https://dadabhaai.com/)
 - **Tech Stack:** Laravel, MySQL, Tailwind CSS, JavaScript, jQuery
 - **Key Achievements:**
